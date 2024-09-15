@@ -16,7 +16,7 @@ body {
   
 
 .grid-container {
-    padding: 20px 20px;
+    padding: 60px 30px 30px 30px;
     display: grid;
     column-gap: 10px;
     row-gap: 30px; 
@@ -52,6 +52,11 @@ body {
     justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
+}
+
+.content-desc {
+    padding-left: 10px;
+    padding-right: 10px;
 }
   
 .image-container .text {

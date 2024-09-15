@@ -46,7 +46,6 @@ body {
 
 
 .nav {
-    position: sticky;
     top: 0;
     align-items: center;
     display: flex;
@@ -67,8 +66,6 @@ body {
     list-style: none;
     padding: 0;
     display: flex;
-
-    justify-content: center;
 }
 
 .nav ul li {
@@ -173,7 +170,7 @@ h5 {
 .plan-signup {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #33bc26;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
