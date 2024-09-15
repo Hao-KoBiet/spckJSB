@@ -1,0 +1,90 @@
+#navbar .navbar-brand {
+    margin-left: 10px; 
+  }
+  
+#search-form {
+    flex-grow: 1; 
+}
+  
+#search-input {
+    width: 100%; 
+}
+
+body {
+    padding-bottom: 100px;
+}
+  
+
+.grid-container {
+    padding: 20px 20px;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 30px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+}
+
+.content {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.image-container {
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+}
+  
+.image-container img {
+    width: 200px;
+    height: 160px;
+    transition: transform 0.5s ease;
+}
+  
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+  
+.image-container .text {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+  
+.image-container:hover img {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+  
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.buy-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #45a049;
+}
+
+p {
+    width: 300px; 
+    word-break: break-all;
+    height: 200px;
+}

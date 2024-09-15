@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="../css/purchase.css"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+    <link
+    rel = "shortcut icon"
+    href = "https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
+    type = "image/x-icon"
+    />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+        <div class="container-fluid" style="gap: 20px;">
+          <img
+            src="https://img.icons8.com/?size=60&id=123620&format=png&color=000000"
+            alt="icon img"
+          />
+          <a class="navbar-brand" href="../index.html">Hao's Grocery</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+    <div class="product-container">
+        <h1 class="productName" id="productName">product name</h1>
+        <p class="product-creator">By</p> <a href="web.user_name">Hào</a>
+    
+        <div class="product-image">
+          <img id="productImage" alt="Sản phẩm đã chọn">
+        </div>
+    
+        <div class="product-quantity">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="productQuantity" name="quantity" min="1" max="9999" placeholder="Quantity">
+          <label for="quantity" style="font-size: 14px;">Storage: 9999</label>
+        </div>
+        
+        <div class="product-price">
+          <label for="price">Price: <p id="productPrice"></p></label>
+        </div>
+
+        <div class="product-description">
+          <label for="description">Description:</label>
+          <p name="description" id="productDesc"> My Food</p>
+        </div>
+    
+        <button class="buy-button">Add To Cart</button>
+    </div>
+
+    <script>
+      let selectedImage = localStorage.getItem('selectedProductImage')
+      let selectedDesc = localStorage.getItem('selectedProductDescription')
+      let selectedPName = localStorage.getItem('selectedProductName')
+      let selectedPrice = localStorage.getItem('selectedProductPrice')
+      
+      if (selectedImage && selectedDesc && selectedPName && selectedPrice) {
+        document.getElementById('productImage').src = '../product-image/' + selectedImage
+        document.getElementById('productDesc').textContent = selectedDesc
+        document.getElementById('productName').textContent = selectedPName
+        document.getElementById('productPrice').textContent = selectedPrice
+      } else {
+        document.getElementById('productImage').alt = 'Không có sản phẩm nào được chọn'
+        document.getElementById('productDesc').textContent = 'Vui lòng quay lại trang trước để chọn sản phẩm.'
+        document.getElementById('productName').textContent = 'Vui lòng quay lại trang trước để chọn sản phẩm'
+        document.getElementById('productPrice').textContent = 'Vui lòng quay lại trang trước để chọn sản phẩm'
+
+      }
+      document.querySelector('.buy-button').onclick = function() {
+        let selectedQuantity = document.getElementById('productQuantity').value
+
+        localStorage.setItem('cartItemsImage',selectedImage)
+        localStorage.setItem('cartItemsDesc',selectedDesc)
+        localStorage.setItem('cartItemsPrice',selectedPrice)
+        localStorage.setItem('cartItemsPname',selectedPName)
+        localStorage.setItem('cartItemsQuantity',selectedQuantity)
+        window.location.href = './cart.html'
+      }
+  </script>
+</body>
+</html>

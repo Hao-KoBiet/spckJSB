@@ -1,0 +1,40 @@
+body {
+    color: #CCCDD3;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #232527;
+    width: auto;
+    margin: 0;
+}
+.so-long {
+    padding-left: 200px;
+    padding-right: 400px;
+    width: 80%;
+    background-color: #232527;
+    width: auto;
+    color: #CCCDD3;
+}
+
+.my-email{
+    color: blue;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+.footer-content p {
+    margin: 0 0 10px;
+    font-size: 1em;
+}
+
+.brand-div {
+    background-color: rgb(80, 209, 80);
+    width: 220px;
+    border-radius: 5px;
+    margin-left: 20px;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/purchase.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+      <div class="container-fluid" style="gap: 20px">
+        <img
+          src="https://img.icons8.com/?size=60&id=123620&format=png&color=000000"
+          alt="icon img"
+        />
+        <a class="navbar-brand" href="../index.html">Hao's Grocery</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="grid-container">
+      <h1 class="productName" id="productName">Cart</h1>
+
+      <div class="product-list" id="productList"></div>
+
+      <hr style="border: 1px solid black; width: 75%" />
+
+    <div style="box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);border-radius: 20px; width: 75%; height: 50%;padding: 20px;" >
+        <div class="pay-list" id="payList">
+          <div style="display: flex; justify-content: space-around; text-align: center;">
+            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="nameList">
+              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Name</strong></h3></li>
+            </ul>
+
+            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="priceList">
+              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Price</strong></h3></li>
+            </ul>
+
+            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="quantityList">
+              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Quantity</strong></h3></li>
+            </ul>
+
+            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="totalList">
+              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Total</strong></h3></li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display: flex;">
+          <h3 style="padding-left: 30px; padding-top: 30px;"><strong>Total Price: </strong></h3>
+          <p style="font-size: 1.6rem;padding-top: 30px;padding-left: 20px;font-weight: bold;" id="TotalItemPrice"></p>
+        </div>
+
+      <button class="checkout-button" onclick="Pay()">Pay</button>
+    </div>
+
+    <script>
+      window.onload = function () {
+        createItem();
+      };
+
+      function createItem() {
+        let cartItemsImage = localStorage.getItem("cartItemsImage");
+        let cartItemsDesc = localStorage.getItem("cartItemsDesc");
+        let cartItemsPrice = parseFloat(localStorage.getItem("cartItemsPrice"))
+
+        // Tạo Sản Phẩm
+        const newItem = document.createElement("div");
+        newItem.classList.add("product");
+        newItem.id = "product";
+
+        const ItemImg = document.createElement("img");
+        ItemImg.src = "../product-image/" + cartItemsImage;
+        ItemImg.alt = "Error Image";
+        ItemImg.id = "product-image";
+
+        const ItemDesc = document.createElement("p");
+        ItemDesc.textContent = cartItemsDesc;
+        ItemDesc.id = "product-description";
+
+        const ItemPrice = document.createElement("p");
+        ItemPrice.textContent = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(cartItemsPrice)
+        ItemPrice.id = "product-price";
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "X";
+        deleteButton.classList.add("delete-button");
+
+        newItem.appendChild(deleteButton);
+        newItem.appendChild(ItemImg);
+        newItem.appendChild(ItemDesc);
+        newItem.appendChild(ItemPrice);
+
+        const ItemList = document.getElementById("productList");
+        ItemList.appendChild(newItem);
+
+        deleteButton.onclick = function () {
+          newItem.remove();
+        }
+
+        // Tạo hóa đơn sản phẩm
+        let cartItemsQuantity = localStorage.getItem("cartItemsQuantity")
+        let cartItemsPname = localStorage.getItem("cartItemsPname");
+        let ItemTotalPrice = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(parseFloat(cartItemsPrice) * parseInt(cartItemsQuantity))
+        let TotalPrice = document.getElementById("TotalItemPrice")
+        TotalPrice.innerHTML = ItemTotalPrice
+
+        let NameList = document.getElementById("nameList")
+        let PriceList = document.getElementById("priceList")
+        let QuantityList = document.getElementById("quantityList")
+        let TotalList = document.getElementById("totalList")
+
+        const ItemQuantity = document.createElement("p")
+        if (cartItemsQuantity >= 1 || cartItemsQuantity >= 9999) {
+          ItemQuantity.textContent = "x" + cartItemsQuantity
+          ItemQuantity.id = 'product-quantity'
+        } else {
+          alert("Vui lòng chọn số lượng")
+          window.location.href = "./purchase.html"
+        }
+
+        const ItemPname = document.createElement("p")
+        ItemPname.textContent = cartItemsPname
+        ItemPname.id = 'product-name'
+
+        NameList.appendChild(ItemPname)
+        PriceList.appendChild(ItemPrice)
+        QuantityList.appendChild(ItemQuantity)
+        TotalList.append(ItemTotalPrice)
+
+      }
+
+      function clearProductFromLocalStorage() {
+        localStorage.removeItem("cartItemsImage");
+        localStorage.removeItem("cartItemsDesc");
+      }
+
+      function clearAllLocalStorage() {
+        localStorage.clear();
+      }
+    </script>
+  </body>
+</html>
