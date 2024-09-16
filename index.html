@@ -17,9 +17,18 @@
     <!-- add internal CSS -->
 
     <link
-        rel = "shortcut icon"
-        href = "https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
-        type = "image/x-icon"
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
@@ -42,7 +51,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav" style="gap: 15px;">
+          <ul class="navbar-nav" style="gap: 15px">
             <li class="nav-item">
               <a
                 id="scroll-about"
@@ -50,11 +59,6 @@
                 aria-current="page"
                 href="#about"
                 >AboutUs</a
-              >
-            </li>
-            <li class="nav-item">
-              <a id="scroll-contact" class="nav-link" href="#contact"
-                >Contact</a
               >
             </li>
             <li class="nav-item">
@@ -69,90 +73,139 @@
             </li>
           </ul>
         </div>
-        <form class="d-flex" role="search" style="padding-right: 45px;">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" role="search" style="padding-right: 45px">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <a href="./html/login.html" style="right: 10px; top: 6px;">
-          <button class="btn-login" >Login</button>
+        <a href="./html/login.html" style="right: 10px; top: 6px">
+          <button class="btn-login" id="login-page">Login</button>
         </a>
       </div>
     </nav>
+
+    <div id="Hi-User"></div>
+
     <div class="con-bg">
       <div class="container">
-        <img src="./mygrocery/food.jpg" >
-        <img src="./mygrocery/drink.jpg" >
-        <img src="./mygrocery/fruit.jpg" >
-        <img src="./mygrocery/vegetable.jpg">
-        <img src="./mygrocery/meat.jpg" >
+        <img src="./mygrocery/food.jpg" />
+        <img src="./mygrocery/drink.jpg" />
+        <img src="./mygrocery/fruit.jpg" />
+        <img src="./mygrocery/vegetable.jpg" />
+        <img src="./mygrocery/meat.jpg" />
       </div>
     </div>
-    <div id="pricing" style="box-shadow: 10px 7px 20px rgb(31, 215, 102); height: 370px; align-items: center; width: fit-content;margin: auto;margin-top: 40px; width: 95%; border-radius: 20px;">
-      <h2 style="justify-content: center; font-weight: bold;">Pricing</h2>
-      <ul class="pricing-table" style="list-style: none; justify-content:space-around; display: flex;">
+
+    <div
+      id="pricing"
+      style="
+        box-shadow: 10px 7px 20px rgb(31, 215, 102);
+        height: 370px;
+        align-items: center;
+        width: fit-content;
+        margin: auto;
+        margin-top: 40px;
+        width: 95%;
+        border-radius: 20px;
+      "
+    >
+      <h2 style="justify-content: center; font-weight: bold">Pricing</h2>
+      <ul
+        class="pricing-table"
+        style="list-style: none; justify-content: space-around; display: flex"
+      >
         <li>
           <div class="plan">
-            <h4 class="plan-title" style="font-weight: bold;">Member</h4>
+            <h4 class="plan-title" style="font-weight: bold">Member</h4>
             <div class="plan-price">$4<span>/month</span></div>
             <ul class="plan-features">
-                <li>Named In Our Long Patreons</li>
-                <li>Provide permisson to use VIP tools</li>
+              <li>Named In Our Long Patreons</li>
+              <li>Provide permisson to use VIP tools</li>
             </ul>
             <a href="#" class="plan-signup">Sign Up</a>
           </div>
         </li>
-        
+
         <li>
           <div class="plan">
-            <h4 div class="plan-title" style="font-weight: bold;">Collab With Us</h4>
+            <h4 div class="plan-title" style="font-weight: bold">
+              Collab With Us
+            </h4>
             <div class="plan-price">Contact With Us</div>
             <ul class="plan-features">
-                <li>All Member's Features</li>
-                <li>Custom Ideas</li>
+              <li>All Member's Features</li>
+              <li>Custom Ideas</li>
             </ul>
             <a href="#" class="plan-signup">Contact Us</a>
           </div>
         </li>
       </ul>
     </div>
-    <h2 id = "about" style="font-weight: bold;margin-top: 40px">About Us</h2>
-    <div class = "about-us" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-        <p style="text-align: center; width: 70%;"> 
-            Hao’s Grocery is an online store that the ideas all came from Shopee, Alibaba,...
-            This page sell very much items (I think)
-        </p>
+
+    <h2 id="about" style="font-weight: bold; margin-top: 40px">About Us</h2>
+    <div
+      class="about-us"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      "
+    >
+      <p style="text-align: center; width: 70%">
+        Hao’s Grocery is an online store that the ideas all came from Shopee,
+        Alibaba,... This page sell very much items (I think)
+      </p>
     </div>
-    <h2 id="contact" style="font-weight: bold;margin-top: 40px">Contact</h2>
-    <ul class="contact-list" style="display: flex; list-style: none; justify-content: center; gap: 80px;">
-        <li>
-            <a href="https://www.facebook.com/profile.php?id=61551426690321" target="_blank">
-                <img 
-                src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" 
-                alt="fifai"
-            />
+
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <a
+          href="/"
+          class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+        >
+          <svg class="bi" width="30" height="24">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary"
+          >&copy; 2024 Company, Inc</span
+        >
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
         </li>
-        <li>
-            <a href="https://www.youtube.com" target="_blank">
-                <img 
-                src="https://img.icons8.com/?size=100&id=19318&format=png&color=000000" 
-                alt="fifai"
-            />
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
         </li>
-        <li>
-            <a href="https://www.instagram.com/haohoang2510/" target="_blank">
-                <img 
-                src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" 
-                alt="fifai"
-            />
+        <li class="ms-3">
+          <a class="text-body-secondary" href="#"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
         </li>
-    </ul>
-    <footer>
-      <!-- add bootstrap javascript file -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-      ></script>
+      </ul>
     </footer>
+
+    <!-- add bootstrap javascript file -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/login.js"></script>
+
   </body>
 </html>

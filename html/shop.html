@@ -168,24 +168,6 @@
       
 
       <script>
-        window.onload = function() {
-          let contentDesc = document.getElementById("content-desc").innerHTML
-          const words = str.split(" ");
-          const firstLine = [];
-          let secondLine = [];
-
-            for (let i = 0; i < words.length; i++) {
-              if (firstLine.length < 15) {
-                firstLine.push(words[i]);
-              } else {
-                secondLine = words.slice(i);
-                break;
-              }
-            }
-
-            return [firstLine.join(" "), secondLine.join(" ")];
-            }
-
         function redirectToProduct(image,description,pname,price) {
             localStorage.setItem('selectedProductImage', image)
             localStorage.setItem('selectedProductDescription', description)
