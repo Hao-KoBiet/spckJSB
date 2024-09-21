@@ -21,6 +21,11 @@ body {
     position: absolute;
 }
 
+.back-button:hover {
+    background-color: #46995a;
+    transition: 0.4s ease-out;
+}
+
 #pricing{
     background-color: #fff;
 }
