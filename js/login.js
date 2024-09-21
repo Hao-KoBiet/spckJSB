@@ -43,7 +43,7 @@ if (loginButton) {
   };
 } else if (signupButton) {
   signupButton.onclick = function (e) {
-    e.preventDefault()
+    e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var userEmail = document.getElementById("email_user");
     var userPassword = document.getElementById("password_user");
@@ -72,7 +72,8 @@ if (loginButton) {
       userConfirmPW.value = "";
       return;
     } else if (
-      userListLocalStorage.filter((user) => user.userEmail == userEmail.value).length
+      userListLocalStorage.filter((user) => user.userEmail == userEmail.value)
+        .length
     ) {
       alert("This email already existed in system");
       userEmail.value = "";

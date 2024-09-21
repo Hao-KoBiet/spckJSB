@@ -18,6 +18,7 @@ body {
 .grid-container {
     padding: 60px 30px 30px 30px;
     display: grid;
+    margin-left: 10%;
     column-gap: 10px;
     row-gap: 30px; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 

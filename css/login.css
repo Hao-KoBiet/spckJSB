@@ -110,8 +110,8 @@ body {
     font-size: 16px;
     transition: background-color 0.3s ease;
     position: absolute;
-    top: 90px;
-    left: 450px;
+    left: 5%;
+    top: 5%;
     z-index: 10;
 }
 
@@ -122,5 +122,9 @@ body {
 @media only screen and (max-width: 768px) {
     body {
         font-size: 16px;
+    }
+    .back {
+        left: 5%;
+        top: 5%;
     }
 }

@@ -48,7 +48,9 @@ body {
 }
 
 #navbar ul li a:hover {
-    background-color: #0025cb;
+    background-color: #cccccc;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
 }
 .about-us, h2{
     display: flex;
