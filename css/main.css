@@ -195,7 +195,5 @@ h1 h2 h3 h4 h5 h6 {
     body {
         font-size: 16px;
     }
-    .container img {
-        flex-basis: calc(50% - 20px); /* Hiển thị 2 hình ảnh trên một hàng khi màn hình nhỏ hơn 768px */
-      }
+
 }
