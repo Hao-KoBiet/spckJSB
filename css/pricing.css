@@ -1,0 +1,91 @@
+body {
+    padding: 0;
+    margin: 50px auto;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    background: linear-gradient(to left, #33bc26,#7aed6f)
+}
+
+.back-button {
+    margin-left: 4px;
+    background-color: #5bc876;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+}
+
+#pricing{
+    background-color: #fff;
+}
+
+.pricing-table .plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-basis: 30%;
+    margin: 0 10px;
+    width: 300px;
+    height: 300px;
+}
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    color: #666;
+}
+
+.plan-features li {
+    margin: 10px 0;
+}
+
+.plan-signup {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #33bc26;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    height: 50px;
+    line-height: 30px; 
+    text-align: center; 
+    font-size: 16px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.plan-signup:hover {
+    background-color: #018605;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    #pricing {
+        height: fit-content;
+    }
+    .pricing-table {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pricing-table .plan {
+        width: 70%;
+    }
+    .pricing-title {
+        padding-left: 40%;
+    }
+}

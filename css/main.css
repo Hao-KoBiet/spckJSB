@@ -5,37 +5,6 @@ body {
     font-size: 15px;
     font-weight: 400;
 }
-.san-pham {
-    display: grid;
-    flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px;
-    justify-content: center;
-    position: relative;
-    width: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.card-image {
-    width: 100%;
-    display: block;
-    transition: width 2s height 2s;
-}
-
-.nut-mua {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background-color: #e61616;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.nut-mua:hover {
-    background-color: #ff0000;
-}
 
 #navbar {
     position: -webkit-sticky; 
@@ -109,84 +78,6 @@ h5 {
     background-color: #45a049;
 }
 
-.con-bg {
-    background-image: url(../mygrocery/bg-con.jpg);
-    background-size: cover;
-    height: 500px;
-    justify-content: center;
-}
-
-.container {
-    margin: 100px 0 0 200px;
-    width: 70%;
-    height: 450px;
-    display: flex;
-    justify-content: center;
-    padding-top: 45px;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-}
-
-.container img {
-    width: 20%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.684);
-    transition: all ease-in-out 0.5s;
-}
-
-.container img:hover {
-    width: 32%;
-
-}
-
-.pricing-table .plan {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-basis: 30%;
-    margin: 0 10px;
-    width: 300px;
-    height: 300px;
-}
-.plan-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px;
-    color: #666;
-}
-
-.plan-features li {
-    margin: 10px 0;
-}
-
-.plan-signup {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #33bc26;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    height: 50px;
-    line-height: 30px; 
-    text-align: center; 
-    font-size: 16px; 
-    width: 100%; 
-    box-sizing: border-box; 
-}
-
-.plan-signup:hover {
-    background-color: #0056b3;
-}
-
 h1 h2 h3 h4 h5 h6 {
     font-weight: bold;
 }
@@ -195,5 +86,4 @@ h1 h2 h3 h4 h5 h6 {
     body {
         font-size: 16px;
     }
-
 }
