@@ -25,7 +25,7 @@ body {
 }
 
 .content {
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
   
@@ -89,8 +89,16 @@ body {
     background-color: #45a049;
 }
 
-p {
-    width: 300px; 
-    word-break: break-all;
-    height: 200px;
+.scroll-up {
+    background-color: #459d48;
+    padding: 5px;
+    top: 80%;
+    margin-left: 10px;
+    border-radius: 10px;
+    position: fixed;
+}
+
+.scroll-up:hover {
+    background-color: #317233;
+    transition: 0.3s ease-in-out;
 }
