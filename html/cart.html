@@ -54,32 +54,96 @@
       <div class="product-list" id="productList"></div>
 
       <hr style="border: 1px solid black; width: 75%" />
+    </div>
+    <div
+      style="
+        box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        width: 75%;
+        height: 50%;
+        padding: 20px;
+      "
+    >
+      <div class="pay-list" id="payList">
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+          "
+        >
+          <ul
+            style="
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              list-style: none;
+            "
+            id="nameList"
+          >
+            <li style="font-weight: bold; font-size: 1.6rem">
+              <h3><strong>Name</strong></h3>
+            </li>
+          </ul>
 
-    <div style="box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);border-radius: 20px; width: 75%; height: 50%;padding: 20px;" >
-        <div class="pay-list" id="payList">
-          <div style="display: flex; justify-content: space-around; text-align: center;">
-            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="nameList">
-              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Name</strong></h3></li>
-            </ul>
+          <ul
+            style="
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              list-style: none;
+            "
+            id="priceList"
+          >
+            <li style="font-weight: bold; font-size: 1.6rem">
+              <h3><strong>Price</strong></h3>
+            </li>
+          </ul>
 
-            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="priceList">
-              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Price</strong></h3></li>
-            </ul>
+          <ul
+            style="
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              list-style: none;
+            "
+            id="quantityList"
+          >
+            <li style="font-weight: bold; font-size: 1.6rem">
+              <h3><strong>Quantity</strong></h3>
+            </li>
+          </ul>
 
-            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="quantityList">
-              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Quantity</strong></h3></li>
-            </ul>
-
-            <ul style="display: flex; flex-direction: column;text-align: center;list-style: none;" id="totalList">
-              <li style="font-weight: bold; font-size: 1.6rem;"><h3><strong>Total</strong></h3></li>
-            </ul>
-          </div>
+          <ul
+            style="
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              list-style: none;
+            "
+            id="totalList"
+          >
+            <li style="font-weight: bold; font-size: 1.6rem">
+              <h3><strong>Total</strong></h3>
+            </li>
+          </ul>
         </div>
+      </div>
 
-        <div style="display: flex;">
-          <h3 style="padding-left: 30px; padding-top: 30px;"><strong>Total Price: </strong></h3>
-          <p style="font-size: 1.6rem;padding-top: 30px;padding-left: 20px;font-weight: bold;" id="TotalItemPrice"></p>
-        </div>
+      <div style="display: flex">
+        <h3 style="padding-left: 30px; padding-top: 30px">
+          <strong>Total Price: </strong>
+        </h3>
+        <p
+          style="
+            font-size: 1.6rem;
+            padding-top: 30px;
+            padding-left: 20px;
+            font-weight: bold;
+          "
+          id="TotalItemPrice"
+        ></p>
+      </div>
 
       <button class="checkout-button" onclick="Pay()">Pay</button>
     </div>
@@ -92,7 +156,7 @@
       function createItem() {
         let cartItemsImage = localStorage.getItem("cartItemsImage");
         let cartItemsDesc = localStorage.getItem("cartItemsDesc");
-        let cartItemsPrice = parseFloat(localStorage.getItem("cartItemsPrice"))
+        let cartItemsPrice = parseFloat(localStorage.getItem("cartItemsPrice"));
 
         // Tạo Sản Phẩm
         const newItem = document.createElement("div");
@@ -109,7 +173,10 @@
         ItemDesc.id = "product-description";
 
         const ItemPrice = document.createElement("p");
-        ItemPrice.textContent = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(cartItemsPrice)
+        ItemPrice.textContent = Intl.NumberFormat("vi-VN", {
+          style: "currency",
+          currency: "VND",
+        }).format(cartItemsPrice);
         ItemPrice.id = "product-price";
 
         const deleteButton = document.createElement("button");
@@ -126,38 +193,40 @@
 
         deleteButton.onclick = function () {
           newItem.remove();
-        }
+        };
 
         // Tạo hóa đơn sản phẩm
-        let cartItemsQuantity = localStorage.getItem("cartItemsQuantity")
+        let cartItemsQuantity = localStorage.getItem("cartItemsQuantity");
         let cartItemsPname = localStorage.getItem("cartItemsPname");
-        let ItemTotalPrice = Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(parseFloat(cartItemsPrice) * parseInt(cartItemsQuantity))
-        let TotalPrice = document.getElementById("TotalItemPrice")
-        TotalPrice.innerHTML = ItemTotalPrice
+        let ItemTotalPrice = Intl.NumberFormat("vi-VN", {
+          style: "currency",
+          currency: "VND",
+        }).format(parseFloat(cartItemsPrice) * parseInt(cartItemsQuantity));
+        let TotalPrice = document.getElementById("TotalItemPrice");
+        TotalPrice.innerHTML = ItemTotalPrice;
 
-        let NameList = document.getElementById("nameList")
-        let PriceList = document.getElementById("priceList")
-        let QuantityList = document.getElementById("quantityList")
-        let TotalList = document.getElementById("totalList")
+        let NameList = document.getElementById("nameList");
+        let PriceList = document.getElementById("priceList");
+        let QuantityList = document.getElementById("quantityList");
+        let TotalList = document.getElementById("totalList");
 
-        const ItemQuantity = document.createElement("p")
+        const ItemQuantity = document.createElement("p");
         if (cartItemsQuantity >= 1 || cartItemsQuantity >= 9999) {
-          ItemQuantity.textContent = "x" + cartItemsQuantity
-          ItemQuantity.id = 'product-quantity'
+          ItemQuantity.textContent = "x" + cartItemsQuantity;
+          ItemQuantity.id = "product-quantity";
         } else {
-          alert("Vui lòng chọn số lượng")
-          window.location.href = "./purchase.html"
+          alert("Vui lòng chọn số lượng");
+          window.location.href = "./purchase.html";
         }
 
-        const ItemPname = document.createElement("p")
-        ItemPname.textContent = cartItemsPname
-        ItemPname.id = 'product-name'
+        const ItemPname = document.createElement("p");
+        ItemPname.textContent = cartItemsPname;
+        ItemPname.id = "product-name";
 
-        NameList.appendChild(ItemPname)
-        PriceList.appendChild(ItemPrice)
-        QuantityList.appendChild(ItemQuantity)
-        TotalList.append(ItemTotalPrice)
-
+        NameList.appendChild(ItemPname);
+        PriceList.appendChild(ItemPrice);
+        QuantityList.appendChild(ItemQuantity);
+        TotalList.append(ItemTotalPrice);
       }
 
       function clearProductFromLocalStorage() {
@@ -169,5 +238,11 @@
         localStorage.clear();
       }
     </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
