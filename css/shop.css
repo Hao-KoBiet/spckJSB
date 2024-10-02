@@ -102,3 +102,13 @@ body {
     background-color: #317233;
     transition: 0.3s ease-in-out;
 }
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}

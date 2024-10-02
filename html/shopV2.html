@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="../css/shop.css"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+    <link
+    rel = "shortcut icon"
+    href = "https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
+    type = "image/x-icon"
+    />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+        <div class="container-fluid" style="gap: 20px;">
+          <img
+            src="https://img.icons8.com/?size=60&id=123620&format=png&color=000000"
+            alt="icon img"
+          />
+          <a class="navbar-brand" href="../index.html">Hao's Grocery</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="d-flex" role="search" onsubmit="event.preventDefault(); findItem();">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+    <a href="#navbar"><button class="scroll-up">UP</button></a>
+
+    <div class="grid-container">
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item1">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage1">
+          <p id="content-desc1" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product1.jfif','Cơm cuộn triều tiên, 100% nhập khẩu từ Triều Tiên','Cơm Cuộn',15000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item2">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage2">
+          <p id="content-desc2" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product2.jfif','Oshi Pho Mát làm từ Gia Huy và Tôm','Oshi Phô Mát',7000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item3">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage3">
+          <p id="content-desc3" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product3.jfif','Shushi Nhiễm Phóng Xạ','Shushi đóng hộp',30000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item4">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage4">
+          <p id="content-desc4" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product4.jpg','Thịt Heo Peppa Tươi Rói','Thịt Kho Heo Peppa',45000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item5">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage5">
+          <p id="content-desc5" class="text-truncate" style="width:180px; padding-left: 20px;"><p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product5.jfif','Rau Củ Quả Nhà Trồng','Rau Củ Quả',20000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item6">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage6">
+          <p id="content-desc6" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product6.png','Nỗi ám ảnh của trẻ con','Nước Rau Má', 15000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item7">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage7">
+          <p id="content-desc7" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product7.jfif','Nước mía nguyên chất nhà làm','Nước mía nguyên chất',5000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item8">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src=""alt="Sản phẩm" id="pimage8">
+          <p id="content-desc8" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product8.jfif','Kombucha uống tốt cho sức khỏe','Kombucha mua 1 tặng -1',10000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item9">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src="" alt="Sản phẩm" id="pimage9">
+          <p id="content-desc9" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+        <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product9.jpg','Hộp Socola Pháp','Socola Pháp Cít Đức',35000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item10">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src="" alt="Sản phẩm" id="pimage10">
+          <p id="content-desc10" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product10.jfif','Hộp socola Almonds nhập khẩu từ dưới đáy xã hội','Socola Almonds',50000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item11">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src="" alt="Sản phẩm" id="pimage11">
+          <p id="content-desc11" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product11.jfif','Combo Hoa Quả giảm giá 20%','Combo Hoa Quả',75000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="content" style="width: 200px; height: 200px; overflow: hidden;" id="product-item12">
+        <div class="image-container" style="overflow: hidden; width: 300px; height: 200px; justify-content: center;">
+          <img src="" alt="Sản phẩm" id="pimage12">
+          <p id="content-desc12" class="text-truncate" style="width:180px; padding-left: 20px;"></p>
+          <div class="overlay">
+            <button class="buy-btn" onclick="redirectToProduct('product12.jfif','Dâu tây tươi từ Đà Lạt','Dâu Tây Đà Lạt',120000 + 'đ')">Buy</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <a
+          href="/"
+          class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+        >
+          <svg class="bi" width="30" height="24">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary"
+          >&copy; 2024 Company, Inc</span
+        >
+      </div>
+
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a
+            class="text-body-secondary"
+            href="https://www.facebook.com/profile.php?id=61551426690321"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+        </li>
+        <li class="ms-3">
+          <a
+            class="text-body-secondary"
+            href="https://www.instagram.com/haohoang2510/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.youtube.com"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/shop.js">
+    </script>
+
+    
+</body>
+</html>

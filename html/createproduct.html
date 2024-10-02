@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="../css/createproduct.css" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=enZOTH5kGrxd&format=png&color=000000"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <a href="../index.html">
+      <button class="back">
+        <i class="arrow_back">Back</i>
+      </button>
+    </a>
+    <div class="signup-container">
+      <form class="signup-form">
+        <h2>Create New Product</h2>
+        <div class="input-group">
+          <label for="name">Product Name:</label>
+          <input
+            type="text"
+            id="product-name"
+            name="product-name"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="image">Product Image:</label>
+          <input
+            type="file"
+            id="image-product"
+            name="image"
+            accept="image/*"
+            required
+          />
+          <img id="preview" src="" alt="image">
+        </div>
+
+        <div class="input-group">
+          <label for="password">Description:</label>
+          <input
+            type="text"
+            id="product-desc"
+            name="product-desc"
+            minlength="2"
+            maxlength="100"
+            placeholder="Type Description"
+            required
+          />
+        </div>
+        <button type="submit" class="signup-btn" id="signup-btn">
+          Upload To The Shop
+        </button>
+      </form>
+    </div>
+    <script>
+        const imageInput = document.getElementById('image-product');
+        const preview = document.getElementById('preview');
+
+        imageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.addEventListener('load', function() {
+                    preview.src = reader.result;
+                });
+                
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+  </body>
+</html>
